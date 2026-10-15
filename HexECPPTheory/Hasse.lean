@@ -5,7 +5,7 @@ Authors: Kim Morrison
 -/
 module
 
-public import HexECPPMathlib.Hasse.Degree
+public import HexECPPTheory.Hasse.Degree
 public import Mathlib.Algebra.Field.ZMod
 
 /-!

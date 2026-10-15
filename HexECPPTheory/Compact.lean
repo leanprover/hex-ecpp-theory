@@ -5,7 +5,7 @@ Authors: Kim Morrison
 -/
 module
 
-public import HexECPPMathlib.Elab
+public import HexECPPTheory.Elab
 public import Lean.Elab.Command
 
 /-!
@@ -128,7 +128,7 @@ meta def exportCertificate (mod decl : TSyntax `ident) (term : Term)
   let literal ← Command.liftTermElabM <| compactSyntax source cert
   let definition ← `(command| @[expose] public def $(mkIdent fullName):ident : Hex.ECPP.Cert := $literal)
   let rendered ← Command.liftTermElabM <| PrettyPrinter.ppCommand definition
-  let body := s!"module\n\npublic import HexECPPMathlib.Compact\n\n{rendered}\n"
+  let body := s!"module\n\npublic import HexECPPTheory.Compact\n\n{rendered}\n"
   if let some parent := path.parent then IO.FS.createDirAll parent
   let handle ← IO.FS.Handle.mk path .writeNew
   handle.putStr body

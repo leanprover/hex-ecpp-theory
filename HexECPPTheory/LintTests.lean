@@ -4,9 +4,9 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Kim Morrison
 -/
 
-import HexECPPMathlib
-import HexECPPMathlib.Native
-import HexECPPMathlib.Pari
+import HexECPPTheory
+import HexECPPTheory.Native
+import HexECPPTheory.Pari
 import Batteries.Tactic.Lint
 import Mathlib.Tactic.Linter.Lint
 
@@ -17,4 +17,4 @@ the default Mathlib/Batteries lint set and theorem documentation coverage on
 the companion's module prefix, including the optional elaborators and IO API.
 -/
 
-#lint- docBlameThm in HexECPPMathlib
+#lint- docBlameThm in HexECPPTheory

@@ -5,9 +5,9 @@ Authors: Kim Morrison
 -/
 module
 
-public import HexECPPMathlib.Reduction
-public import HexECPPMathlib.Order
-public import HexPrimalityMathlib.Prime
+public import HexECPPTheory.Reduction
+public import HexECPPTheory.Order
+public import HexPrimalityTheory.Prime
 
 /-!
 # Why accepted elliptic curve certificates prove primality

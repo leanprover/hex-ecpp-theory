@@ -5,9 +5,9 @@ Authors: Kim Morrison
 -/
 module
 
-public import HexECPPMathlib.Compact
-public import HexECPPMathlib.Pari.Process
-public meta import HexECPPMathlib.Pari.Process
+public import HexECPPTheory.Compact
+public import HexECPPTheory.Pari.Process
+public meta import HexECPPTheory.Pari.Process
 public import Lean.Elab.Command
 public import Lean.Meta.Tactic.TryThis
 public import Mathlib.Tactic.Linter.TacticDocumentation

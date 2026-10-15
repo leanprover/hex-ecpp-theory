@@ -24,7 +24,7 @@ used to prove primality from an ECPP certificate. The imported theorem's
 dependencies are audited to allow only Lean's standard axioms.
 
 The related interpretation of prime-field points as Frobenius fixed points
-is provided in `HexECPPMathlib.Hasse.Frobenius`.
+is provided in `HexECPPTheory.Hasse.Frobenius`.
 -/
 
 @[expose] public section

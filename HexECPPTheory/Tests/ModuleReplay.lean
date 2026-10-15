@@ -5,8 +5,8 @@ Authors: Kim Morrison
 -/
 module
 
-public import HexECPPMathlib.Tests.Certificate
-import HexECPPMathlib.Native
+public import HexECPPTheory.Tests.Certificate
+import HexECPPTheory.Native
 
 /-! # Public module replay and native suggestion regression -/
 

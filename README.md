@@ -1,4 +1,4 @@
-# hex-ecpp-mathlib
+# hex-ecpp-theory
 
 Part of [`hex`](https://github.com/kim-em/hex-dev), a computer algebra library
 for Lean 4. The aim is fast executable code, fully verified, built with
@@ -13,7 +13,7 @@ data excludes every possible small prime divisor of `n`.
 This companion supplies that mathematical proof and the certificate tactics.
 It depends on
 [`hex-ecpp`](https://github.com/leanprover/hex-ecpp),
-[`hex-primality-mathlib`](https://github.com/leanprover/hex-primality-mathlib),
+[`hex-primality-theory`](https://github.com/leanprover/hex-primality-theory),
 Mathlib and [TauCeti](https://github.com/TauCetiProject/TauCeti). The computational
 partner supplies the arithmetic checker and built-in search. See the
 [manual](https://kim-em.github.io/hex-dev/HexECPP___-bounded-elliptic-curve-certificates/Introduction/)
@@ -23,14 +23,14 @@ for a first proof and an explanation of the mathematics.
 
 ```toml
 [[require]]
-name = "hex-ecpp-mathlib"
-git = "https://github.com/leanprover/hex-ecpp-mathlib.git"
+name = "hex-ecpp-theory"
+git = "https://github.com/leanprover/hex-ecpp-theory.git"
 rev = "main"
 ```
 
 ```lean
 module
-public import HexECPPMathlib
+public import HexECPPTheory
 
 namespace MyPrimes
 @[expose] public def seventeen : Hex.ECPP.Cert :=
@@ -52,9 +52,9 @@ end MyPrimes
   and `rationalPointsEquivKer` describe the independent Frobenius correspondence.
 - `ecpp using` replays closed constructor data. `ecpp_cert%` decodes compact
   frozen rows with an explicit terminal `Hex.Nat.PrimeCert`.
-- Import `HexECPPMathlib.Native` for `primality? (method := ecpp)` and
+- Import `HexECPPTheory.Native` for `primality? (method := ecpp)` and
   `#ecpp_export (method := ecpp) MyCertificates.Prime cert for n`.
-- Import `HexECPPMathlib.Pari` for `primality? (method := pari)` and
+- Import `HexECPPTheory.Pari` for `primality? (method := pari)` and
   `#ecpp_export MyCertificates.Prime cert for n`. Generation requires PARI/GP
   on POSIX; importing and replaying its exported certificate does not.
 
@@ -84,7 +84,7 @@ Exhaustion proves nothing about compositeness. There is no automatic ECPP
 fallback or `norm_num` registration.
 
 Use [`hex-ecpp`](https://github.com/leanprover/hex-ecpp) alone for
-Mathlib-free computation. See the [SPEC](SPEC/hex-ecpp-mathlib.md) for
+Mathlib-free computation. See the [SPEC](SPEC/hex-ecpp-theory.md) for
 constructor policy, process cleanup, exact allocations and failure semantics.
 
 # Contributing
@@ -96,8 +96,8 @@ describe the behavior you want and leave the implementation to the maintainer.
 
 # Mixed factorization integration
 
-`HexIntFactorMathlib.Mixed` uses `Hex.ECPP.natPrime_of_checkAt` to discharge the
+`HexIntFactorTheory.Mixed` uses `Hex.ECPP.natPrime_of_checkAt` to discharge the
 optional computational factorization extension's ECPP soundness hypothesis.
 Complete and partial Mathlib factorization correspondence lives in that
 companion. Shared auditing and reification now live in `HexECPP.ElabData`;
-`HexECPPMathlib.Policy` remains a compatibility import of `HexECPP.Policy`.
+`HexECPPTheory.Policy` remains a compatibility import of `HexECPP.Policy`.

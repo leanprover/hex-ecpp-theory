@@ -1,6 +1,6 @@
-# hex-ecpp-mathlib
+# hex-ecpp-theory
 
-The Mathlib companion interprets checked HexECPP arithmetic over every prime
+The theory companion interprets checked HexECPP arithmetic over every prime
 divisor of a candidate and proves unconditional `Nat.Prime` soundness. Its
 [computational prerequisite](../../HexECPP/SPEC/hex-ecpp.md) remains
 Mathlib-free.
@@ -113,7 +113,7 @@ do not guarantee successful production for every prime of these sizes.
 
 ## Compact certificates and explicit PARI production
 
-`HexECPPMathlib.Compact` provides `ecpp_cert% "rows" using leaf`. The string
+`HexECPPTheory.Compact` provides `ecpp_cert% "rows" using leaf`. The string
 is a bounded PARI vector or integer, and the leaf is explicit closed
 `Hex.Nat.PrimeCert` constructor data. Conversion uses the existing core
 converter with `defaultImportBudget`, checks the result and reifies the full
@@ -123,7 +123,7 @@ The auxiliary body has no compiled replacement or proof assumptions.
 No PARI invocation or terminal certificate search runs during replay.
 
 PARI generation is POSIX-only and rejects other platforms before spawning.
-Users explicitly import `HexECPPMathlib.Pari` to enable
+Users explicitly import `HexECPPTheory.Pari` to enable
 `primality? (method := pari)` for `Nat.Prime` and `Hex.Nat.Prime` goals. The
 generator runs `gp` from PATH with `-q -f`, passing only the evaluated natural
 numeral to `primecert` in a private temporary request file. Null stdin keeps
@@ -154,7 +154,7 @@ the PARI module registers no automatic fallback or `norm_num` handler.
 
 `#ecpp_export MyCertificates.Prime cert for n` writes
 `MyCertificates/Prime.lean`, relative to the process working directory. The
-file uses the module system, publicly imports `HexECPPMathlib.Compact`, and
+file uses the module system, publicly imports `HexECPPTheory.Compact`, and
 contains one `@[expose] public` certificate declaration named
 `MyCertificates.Prime.cert`. After generation, remove the command, put
 the file under the project's Lean source root, use `public import MyCertificates.Prime`,
@@ -205,8 +205,8 @@ conformance/oracle script; add no workflow or matrix.
 
 ## Implementation ownership
 
-`HexECPPMathlib/{Reduction,Hasse,Order,Soundness,Elab}.lean` and
-`HexECPPMathlib/Hasse/{Degree,Frobenius}.lean` own the bridge. The degree and
+`HexECPPTheory/{Reduction,Hasse,Order,Soundness,Elab}.lean` and
+`HexECPPTheory/Hasse/{Degree,Frobenius}.lean` own the bridge. The degree and
 Frobenius infrastructure may come from a proved compatible upstream library;
 its exact version is recorded by `lake-manifest.json`, not this SPEC. The
 bridge's source registration does not by itself imply release or phase
@@ -221,7 +221,7 @@ progress.
 
 ## Native search elaboration
 
-`HexECPPMathlib/Native.lean` provides the explicit
+`HexECPPTheory/Native.lean` provides the explicit
 `primality? (method := ecpp)` route and certificate export. Its executable
 producer is owned by the computational SPEC. It validates raw data and
 kernel-checks the unconditional proof before suggesting or exporting compact
@@ -250,7 +250,7 @@ total to 33.
 
 ## Automatic native fallback
 
-`HexECPPMathlib.Auto` is a separate optional module. Importing it enables a
+`HexECPPTheory.Auto` is a separate optional module. Importing it enables a
 bounded native ECPP fallback for ordinary `primality?` on both `Nat.Prime` and
 `Hex.Nat.Prime` goals, via the upstream version-1 `SuggestionExtension`
 boundary. The ordinary ECPPMathlib umbrella, `Native`, `Pari`, core ECPP and
@@ -351,10 +351,10 @@ labels. A process timeout does not establish construction exhaustion.
 
 ## Proof-track evidence
 
-This Mathlib companion has no compiled benchmark track. Literal `ecpp using`,
+This theory companion has no compiled benchmark track. Literal `ecpp using`,
 compact `ecpp_cert%`, native/PARI suggestions and source export, and frozen
 replay take the proof track. `libraries.yml` declares the explicit
-`bench/HexECPPMathlib/ProofProbe` root built by CI; the public generation/export
+`bench/HexECPPTheory/ProofProbe` root built by CI; the public generation/export
 routes additionally have protocol conformance that builds generated source
 and replays the exact certificate suggestion in fresh modules. The surface
 inventory is `reports/ecpp/companion-proof-surface.md`. Existing replay and
@@ -366,9 +366,9 @@ performance claims and profiles.
 
 ## Mixed integer-factorization integration
 
-`HexIntFactorMathlib.Mixed` explicitly imports `HexECPPMathlib.Soundness` and
+`HexIntFactorTheory.Mixed` explicitly imports `HexECPPTheory.Soundness` and
 uses `Hex.ECPP.natPrime_of_checkAt` for every ECPP-bearing factor entry. This
-companion gains no dependency on HexIntFactor or HexIntFactorMathlib. Mixed
+companion gains no dependency on HexIntFactor or HexIntFactorTheory. Mixed
 computational exports import only their computational replay boundary; they
 carry checked data, while unconditional primality and `Nat.factorization`
 correspondence require the designated factorization companion. Existing ECPP
@@ -379,7 +379,7 @@ discharge that integration evidence.
 
 The raw-data reifier and bounded syntax auditor are shared from the explicitly
 imported Mathlib-free `HexECPP.ElabData`, with numeral/replay limits in
-`HexECPP.Policy`. `HexECPPMathlib.Policy` re-exports the latter for compatibility.
+`HexECPP.Policy`. `HexECPPTheory.Policy` re-exports the latter for compatibility.
 The existing ECPP proof elaborator retains its accepted syntax and admission
 policy while this extraction lets mixed computational exports validate data
 without importing mathematical soundness.

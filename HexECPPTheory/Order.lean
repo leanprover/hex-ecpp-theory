@@ -5,7 +5,7 @@ Authors: Kim Morrison
 -/
 module
 
-public import HexECPPMathlib.Hasse
+public import HexECPPTheory.Hasse
 public import HexECPP.Replay
 public import Mathlib.GroupTheory.OrderOfElement
 

@@ -5,7 +5,7 @@ Authors: Kim Morrison
 -/
 module
 
-public import HexECPPMathlib.Compact
+public import HexECPPTheory.Compact
 public import HexECPP.Search
 public meta import HexECPP.Search
 public import Lean.Meta.Tactic.TryThis

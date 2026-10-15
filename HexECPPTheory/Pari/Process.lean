@@ -5,8 +5,8 @@ Authors: Kim Morrison
 -/
 module
 
-public import HexECPPMathlib.Policy
-public import HexECPPMathlib.Pari.IO
+public import HexECPPTheory.Policy
+public import HexECPPTheory.Pari.IO
 public import HexArith.Montgomery.Context
 
 /-! # Bounded PARI process protocol

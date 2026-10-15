@@ -5,12 +5,12 @@ Authors: Kim Morrison
 -/
 module
 
-public import HexECPPMathlib.Soundness
+public import HexECPPTheory.Soundness
 public import HexECPP.ElabData
 public import HexECPP.Import
 public meta import HexECPP.Import
-public import HexECPPMathlib.Policy
-public meta import HexECPPMathlib.Policy
+public import HexECPPTheory.Policy
+public meta import HexECPPTheory.Policy
 public import HexPrimality.Elab
 public import Lean.Elab.Tactic
 

@@ -5,7 +5,7 @@ Authors: Kim Morrison
 -/
 module
 
-public import HexECPPMathlib.Compact
+public import HexECPPTheory.Compact
 
 @[expose]
 public def Hex.ECPP.Tests.certificate512 : Hex.ECPP.Cert :=

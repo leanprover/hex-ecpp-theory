@@ -27,26 +27,14 @@
       "configFile": "lakefile.toml"
     },
     {
-      "url": "https://github.com/leanprover/hex-primality-mathlib.git",
-      "type": "git",
-      "subDir": null,
-      "scope": "",
-      "rev": "6ef8adc1bd45e545ae6a9a21abdc5803c7bf07e7",
-      "name": "HexPrimalityMathlib",
-      "manifestFile": "lake-manifest.json",
-      "inputRev": "v0.9.0",
-      "inherited": false,
-      "configFile": "lakefile.toml"
-    },
-    {
       "url": "https://github.com/leanprover/hex-ecpp.git",
       "type": "git",
       "subDir": null,
       "scope": "",
-      "rev": "5944841952b298679765f8c062bb3503932820e7",
+      "rev": "c3127662195cab3c24c729c4bd5f0e8324835c79",
       "name": "HexECPP",
       "manifestFile": "lake-manifest.json",
-      "inputRev": "v0.9.0",
+      "inputRev": "v0.10.0",
       "inherited": false,
       "configFile": "lakefile.toml"
     },
@@ -55,10 +43,10 @@
       "type": "git",
       "subDir": null,
       "scope": "",
-      "rev": "902932e483b285587a1ddbda0e9ba9b9f89d8461",
+      "rev": "e89daa43f1c6f2038a59674598e2a5097e64c3df",
       "name": "HexPrimality",
       "manifestFile": "lake-manifest.json",
-      "inputRev": "v0.9.0",
+      "inputRev": "v0.10.0",
       "inherited": false,
       "configFile": "lakefile.toml"
     },
@@ -70,7 +58,7 @@
       "rev": "5ae42d0127e49eb3973ae01a5304a7adb2a9ee65",
       "name": "HexArith",
       "manifestFile": "lake-manifest.json",
-      "inputRev": "v0.9.0",
+      "inputRev": "v0.10.0",
       "inherited": false,
       "configFile": "lakefile.lean"
     },
@@ -79,10 +67,10 @@
       "type": "git",
       "subDir": null,
       "scope": "",
-      "rev": "c5b9f3befd306eba663345c8d0bd3a252e3b803e",
+      "rev": "f3ec4bd78149d07b4fd2372010563334f285b37e",
       "name": "HexBasic",
       "manifestFile": "lake-manifest.json",
-      "inputRev": "v0.9.0",
+      "inputRev": "v0.10.0",
       "inherited": true,
       "configFile": "lakefile.toml"
     },
@@ -193,9 +181,21 @@
       "inputRev": "1c497c347f615b3087cb605f8cf743e591376105",
       "inherited": false,
       "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover/hex-primality-theory.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "58440896420904eb53045a3b886058987ab49d68",
+      "name": "HexPrimalityTheory",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v0.10.0",
+      "inherited": false,
+      "configFile": "lakefile.toml"
     }
   ],
-  "name": "HexECPPMathlib",
+  "name": "\u00abhex-ecpp-theory\u00bb",
   "lakeDir": ".lake",
   "fixedToolchain": false
 }

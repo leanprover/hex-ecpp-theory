@@ -5,7 +5,7 @@ Authors: Kim Morrison
 -/
 module
 
-public import HexECPPMathlib.Native
+public import HexECPPTheory.Native
 
 /-! # Frozen 512-bit native suggestion
 
